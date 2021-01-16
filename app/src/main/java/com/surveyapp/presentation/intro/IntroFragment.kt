@@ -65,7 +65,7 @@ class IntroFragment : BaseMvpFragment(R.layout.fragment_intro), IntroView {
     override fun showSavedSurveySnackBar() {
         Snackbar.make(
             binding.root,
-            resources.getString(R.string.submitSurveyBtnText),
+            resources.getString(R.string.surveySaved),
             Snackbar.LENGTH_LONG
         ).apply {
             setAction(R.string.surveyUndo) {
