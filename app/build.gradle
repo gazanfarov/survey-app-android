@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.surveyapp"
+        minSdkVersion 22
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            resValue "string", "mainNavigationFragment", "mainNavigationFragment"
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "string", "mainNavigationFragment", "mainNavigationFragment"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        //dataBinding = true
+        // for view binding :
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    implementation androidx.core
+    implementation androidx.constraint_layout
+    implementation androidx.navigation_runtime
+    implementation androidx.navigation_fragment
+    implementation androidx.fragment_navigation_ui
+    implementation androidx.recycler_view
+    implementation di.koin_core
+    implementation di.koin_viewmodel
+    implementation ui.material
+    implementation ui.moxy
+    implementation ui.moxy_androidx
+    implementation ui.moxy_ktx
+    implementation ui.view_binding_delegate
+    implementation ui.edit_text_mask
+    implementation other.timber
+    kapt ui.moxy_compiler
+}

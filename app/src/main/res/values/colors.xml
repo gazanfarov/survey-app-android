@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#4857D7</color>
+    <color name="primaryPressed">#3243D8</color>
+    <color name="secondary">#2C98F0</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="payment">#2E4057</color>
+    <color name="currency">#F5F6FF</color>
+</resources>

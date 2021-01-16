@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/intro">
+    <fragment
+        android:id="@+id/intro"
+        android:name="com.surveyapp.presentation.intro.IntroFragment"
+        android:label="@string/appName"
+        tools:layout="@layout/fragment_intro">
+        <argument
+            android:name="hoursAnswerId"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <argument
+            android:name="paymentAnswerId"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <action
+            android:id="@+id/introToHoursQuestion"
+            app:destination="@id/hoursQuestion"
+            app:popUpTo="@id/intro" />
+    </fragment>
+    <fragment
+        android:id="@+id/hoursQuestion"
+        android:name="com.surveyapp.presentation.question.HoursQuestionFragment"
+        android:label="@string/appName"
+        tools:layout="@layout/fragment_hours_question">
+        <argument
+            android:name="questionId"
+            app:argType="long" />
+        <action
+            android:id="@+id/hoursQuestionToPaymentQuestion"
+            app:destination="@id/paymentQuestion"
+            app:popUpTo="@id/hoursQuestion" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentQuestion"
+        android:name="com.surveyapp.presentation.payment.PaymentQuestionFragment"
+        android:label="@string/appName"
+        tools:layout="@layout/fragment_payment_question">
+        <argument
+            android:name="questionId"
+            app:argType="long" />
+        <argument
+            android:name="hoursAnswerId"
+            app:argType="long" />
+        <action
+            android:id="@+id/paymentQuestionToIntro"
+            app:destination="@id/intro"
+            app:popUpTo="@id/paymentQuestion" />
+    </fragment>
+</navigation>

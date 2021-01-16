@@ -1,0 +1,118 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = "1.4.20"
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.1.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.2"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+ext {
+    kotlin_lang = [
+            stdlib            : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            coroutines_core   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0",
+            coroutines_android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.0"
+    ]
+    network = [
+            retrofit           : "com.squareup.retrofit2:retrofit:2.9.0",
+            scalars            : "com.squareup.retrofit2:converter-scalars:2.9.0",
+            gson               : "com.squareup.retrofit2:converter-gson:2.9.0",
+            moshi_converter    : "com.squareup.retrofit2:converter-moshi:2.9.0",
+            moshi_kotlin       : "com.squareup.moshi:moshi-kotlin:1.11.0",
+            moshi_codegen      : "com.squareup.moshi:moshi-kotlin-codegen:1.11.0",
+            moshi              : "com.squareup.moshi:moshi:1.11.0",
+            logging_interceptor: "com.squareup.okhttp3:logging-interceptor:4.9.0"
+    ]
+    socials = [
+            facebook: "com.facebook.android:facebook-loginkit:4.36.0"
+    ]
+    di = [
+            koin_core     : "org.koin:koin-core:2.0.1",
+            koin_viewmodel: "org.koin:koin-androidx-viewmodel:2.0.1"
+    ]
+    google = [
+            auth           : "com.google.android.gms:play-services-auth:18.1.0",
+            phone          : "com.google.android.gms:play-services-auth-api-phone:17.3.0",
+            maps           : "com.google.android.gms:play-services-maps:17.0.0",
+            location       : "com.google.android.gms:play-services-location:17.0.0",
+            messaging      : "com.google.firebase:firebase-messaging:20.2.4",
+            dagger         : "com.google.dagger:dagger:2.27",
+            dagger_compiler: "com.google.dagger:dagger-compiler:2.27",
+            analytics      : "com.google.firebase:firebase-analytics-ktx:17.5.0",
+            crashlytics    : "com.google.firebase:firebase-crashlytics:17.2.1",
+            flex_box       : "com.google.android:flexbox:2.0.1",
+            core           : "com.google.android.play:core:1.8.0"
+    ]
+    androidx = [
+            multidex              : "androidx.multidex:multidex:2.0.1",
+            transition            : "androidx.transition:transition-ktx:1.4.0-rc01",
+            work_runtime          : "androidx.work:work-runtime-ktx:2.4.0",
+            navigation_runtime    : "androidx.navigation:navigation-runtime-ktx:2.3.2",
+            navigation_fragment   : "androidx.navigation:navigation-fragment-ktx:2.3.2",
+            paging_runtime        : "androidx.paging:paging-runtime-ktx:3.0.0-alpha09",
+            fragment_testing      : "androidx.fragment:fragment-testing:1.2.0",
+            fragment_navigation_ui: "androidx.navigation:navigation-ui-ktx:2.3.2",
+            appcompat             : "androidx.appcompat:appcompat:1.1.0",
+            cardview              : "androidx.cardview:cardview:1.0.0",
+            recycler_view         : "androidx.recyclerview:recyclerview:1.2.0-beta01",
+            core                  : "androidx.core:core-ktx:1.2.0",
+            constraint_layout     : "androidx.constraintlayout:constraintlayout:1.1.3",
+            junit                 : "androidx.test.ext:junit:1.1.1",
+            runner                : "androidx.test:runner:1.2.0",
+            rules                 : "androidx.test:rules:1.2.0",
+            espresso_contrib      : "androidx.test.espresso:espresso-contrib:3.2.0",
+            espresso_core         : "androidx.test.espresso:espresso-core:3.2.0",
+            activity_ktx          : "androidx.activity:activity-ktx:1.2.0-rc01",
+            fragment_ktx          : "androidx.fragment:fragment-ktx:1.3.0-rc01",
+            view_pager            : "androidx.viewpager2:viewpager2:1.1.0-alpha01"
+    ]
+    ui = [
+            loading_dots         : "com.eyalbira.loadingdots:loading-dots:1.0.2",
+            range_datepicker     : "com.savvi.datepicker:rangepicker:1.3.0",
+            glide                : "com.github.bumptech.glide:glide:4.8.0",
+            glide_compiler       : "com.github.bumptech.glide:compiler:4.8.0",
+            coil                 : "io.coil-kt:coil:0.13.0",
+            material             : "com.google.android.material:material:1.2.0",
+            image_cropper        : "com.github.yalantis:ucrop:2.2.6",
+            moxy                 : "com.github.moxy-community:moxy:2.1.1",
+            moxy_androidx        : "com.github.moxy-community:moxy-androidx:2.1.1",
+            moxy_compiler        : "com.github.moxy-community:moxy-compiler:2.1.1",
+            moxy_ktx             : "com.github.moxy-community:moxy-ktx:2.1.1",
+            insetter_ktx         : "dev.chrisbanes:insetter-ktx:0.3.1",
+            insetter_dbx         : "dev.chrisbanes:insetter-dbx:0.2.0",
+            veil                 : "com.github.skydoves:androidveil:1.0.9",
+            view_binding_delegate: "com.kirich1409.viewbindingpropertydelegate:vbpd-noreflection:1.3.1",
+            edit_text_mask       : "com.redmadrobot:input-mask-android:6.0.0"
+    ]
+    testing = [
+            mockito_inline : "org.mockito:mockito-inline:2.8.47",
+            mockito_kotlin : "com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0-RC3",
+            mockito_android: "org.mockito:mockito-android:2.24.5",
+            junit          : "junit:junit:4.12",
+            ext_junit      : "androidx.test.ext:junit:1.1.1"
+    ]
+    other = [
+            timber: "com.jakewharton.timber:timber:4.7.1"
+    ]
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

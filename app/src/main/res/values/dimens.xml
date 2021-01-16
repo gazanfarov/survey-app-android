@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="baseMargin">16dp</dimen>
+    <dimen name="baseMarginBig">32dp</dimen>
+    <dimen name="baseRadius">6dp</dimen>
+
+    <dimen name="primaryButtonPadding">12dp</dimen>
+</resources>

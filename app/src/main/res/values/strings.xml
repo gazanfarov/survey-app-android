@@ -1,0 +1,16 @@
+<resources>
+    <string name="appName">Survey</string>
+
+    <string name="introTitle">Welcome to the survey.</string>
+    <string name="introSubtitle">We only have two questions and we need less than 1 minute of your time.</string>
+    <string name="introButtonText">Start survey</string>
+
+    <string name="questionHoursTitle">How many hours did you have electricity yesterday?</string>
+    <string name="questionPaymentTitle">What total did you pay for your electricity last week?</string>
+
+    <string name="currency">EUR</string>
+    <string name="submitSurveyBtnText">Submit survey</string>
+
+    <string name="surveySaved">Thank you, your survey has been sent</string>
+    <string name="surveyUndo">UNDO</string>
+</resources>
